@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-sans: 'Poppins', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --color-brand: #F97316;
+  --color-brand-light: #FED7AA;
+  --color-brand-dark: #EA580C;
+  --sidebar-bg: #0F1117;
+  --sidebar-border: #1E2130;
+  --sidebar-text: #A1A8B8;
+  --sidebar-text-active: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  background: #F9FAFB;
+  color: #111827;
+}
+
+/* Sidebar scrollbar */
+.sidebar-nav::-webkit-scrollbar {
+  width: 4px;
+}
+.sidebar-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+.sidebar-nav::-webkit-scrollbar-thumb {
+  background: #2A2F3F;
+  border-radius: 4px;
+}
+
+/* Custom scrollbar for tables */
+.table-container::-webkit-scrollbar {
+  height: 6px;
+}
+.table-container::-webkit-scrollbar-track {
+  background: #F3F4F6;
+}
+.table-container::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 4px;
+}
+
+/* Drag-drop zone */
+.drop-zone {
+  transition: all 0.2s ease;
+}
+.drop-zone.drag-over {
+  border-color: #F97316;
+  background: #FFF7ED;
+}
+
+/* Focus ring */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  ring-color: #F97316;
+}
+
+/* Animation */
+@keyframes slideIn {
+  from { transform: translateX(-10px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes fadeUp {
+  from { transform: translateY(8px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-in { animation: slideIn 0.2s ease forwards; }
+.animate-fade-up { animation: fadeUp 0.3s ease forwards; }
+
+/* Status badge pulse */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.status-pending .dot { animation: pulse-dot 2s infinite; }
